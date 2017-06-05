@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+	Options -MultiViews
+    RewriteEngine On
+	RewriteBase /kuliah/
+	RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+	RewriteCond %{REQUEST_URI} !/kuliah/public/
+	RewriteRule ^(.*)$ /kuliah/public/$1 [L]
+
+</IfModule>
